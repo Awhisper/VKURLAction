@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="L9v-ra-Mz8">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="y4R-El-dZJ">
+            <objects>
+                <navigationController id="L9v-ra-Mz8" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BZz-vh-7Tn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ud2-Hc-hnx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cdn-1h-MM0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-812" y="-117"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAX-Ea-pOc">
+                                <rect key="frame" x="94" y="84" width="91" height="30"/>
+                                <state key="normal" title="nativeAction1"/>
+                                <connections>
+                                    <action selector="native1click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Ln-dz-JDy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8e4-EE-MOj">
+                                <rect key="frame" x="92" y="122" width="94" height="30"/>
+                                <state key="normal" title="nativeAction2"/>
+                                <connections>
+                                    <action selector="native2click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="saV-nM-K4B"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1S-Tr-w5e">
+                                <rect key="frame" x="105" y="160" width="68" height="30"/>
+                                <state key="normal" title="urlAction1"/>
+                                <connections>
+                                    <action selector="url1click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ByM-B7-u8R"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3u-5c-39v">
+                                <rect key="frame" x="105" y="198" width="70" height="30"/>
+                                <state key="normal" title="urlAction2"/>
+                                <connections>
+                                    <action selector="url2click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A08-c6-jNL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="uvi-Vi-7ni"/>
+                    <connections>
+                        <outlet property="native1" destination="bAX-Ea-pOc" id="I2q-Rk-hYY"/>
+                        <outlet property="native2" destination="8e4-EE-MOj" id="VlJ-gd-9lN"/>
+                        <outlet property="url1" destination="e1S-Tr-w5e" id="vod-Br-4qJ"/>
+                        <outlet property="url2" destination="M3u-5c-39v" id="3yj-Ru-hol"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-19" y="-96"/>
+        </scene>
+    </scenes>
+</document>
