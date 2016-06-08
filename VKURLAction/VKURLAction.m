@@ -37,15 +37,42 @@
     return self;
 }
 
++(void)setupScheme:(NSString *)scheme andHost:(NSString *)host
+{
+    [[self sharedInstance]setupScheme:scheme andHost:host];
+}
+
+
 -(void)setupScheme:(NSString *)scheme andHost:(NSString *)host
 {
     self.urlParser.scheme = scheme;
     self.urlParser.host = host;
 }
 
++(void)enableSignCheck:(NSString *)signSalt
+{
+    [[self sharedInstance]enableSignCheck:signSalt];
+}
+
 -(void)enableSignCheck:(NSString *)signSalt
 {
     self.urlParser.signSalt = signSalt;
+}
+
++(void)mapKeyword:(NSString *)key toActionName:(NSString *)action
+{
+    [[self sharedInstance] mapKeyword:key toActionName:action];
+}
+
+
+-(void)mapKeyword:(NSString *)key toActionName:(NSString *)action
+{
+    [self.urlParser mapKeyword:key toActionName:action];
+}
+
++(id)doActionWithUrl:(NSURL *)url
+{
+    return [[self sharedInstance] doActionWithUrl:url];
 }
 
 -(id)doActionWithUrl:(NSURL *)url{
@@ -73,9 +100,53 @@
     return nil;
 }
 
++(id)doActionWithUrlString:(NSString *)string
+{
+    return [[self sharedInstance] doActionWithUrlString:string];
+}
+
 -(id)doActionWithUrlString:(NSString *)string
 {
     NSURL *url = [NSURL URLWithString:string];
     return [self doActionWithUrl:url];
+}
+
++(NSString *)creatNewNativeBaseUrl
+{
+    return [[self sharedInstance] creatNewNativeBaseUrl];
+}
+
+-(NSString *)creatNewNativeBaseUrl
+{
+    return [self.urlParser creatNewNativeBaseUrl];
+}
+
++(NSString *)appendAction:(NSString *)action ToBaseUrl:(NSString *)url
+{
+    return [[self sharedInstance] appendAction:action ToBaseUrl:url];
+}
+
+-(NSString *)appendAction:(NSString *)action ToBaseUrl:(NSString *)url
+{
+    return [self.urlParser appendAction:action ToBaseUrl:url];
+}
+
++(NSString *)appendArguementToHalfUrl:(NSString *)url WithKey:(NSString *)key andValue:(NSString *)value{
+    return [[self sharedInstance] appendArguementToHalfUrl:url WithKey:key andValue:value];
+}
+
+-(NSString *)appendArguementToHalfUrl:(NSString *)url WithKey:(NSString *)key andValue:(NSString *)value
+{
+    return [self.urlParser appendArguementToHalfUrl:url WithKey:key andValue:value];
+}
+
++(NSString *)appendSignCheckToUrl:(NSString *)url
+{
+    return [[self sharedInstance] appendSignCheckToUrl:url];
+}
+
+-(NSString *)appendSignCheckToUrl:(NSString *)url
+{
+    return [self.urlParser appendSignCheckToUrl:url];
 }
 @end

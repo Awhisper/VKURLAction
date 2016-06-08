@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-
-
 @interface NSString (VKURLString)
 -(NSString *)vkMD5HexDigest;
 - (BOOL)containsString:(NSString *)string options:(NSStringCompareOptions)options;
@@ -34,7 +32,18 @@
 @property (nonatomic,strong) NSString *signSalt;
 
 
+-(void)mapKeyword:(NSString *)key toActionName:(NSString *)action;
 
 -(BOOL)parseURL:(NSURL *)url toAction:(NSString *__autoreleasing*)action toParamDic:(NSDictionary *__autoreleasing*)param;
+
+
+//for TEST generator url
+-(NSString *)creatNewNativeBaseUrl;
+
+-(NSString *)appendAction:(NSString *)action ToBaseUrl:(NSString *)url;
+
+-(NSString *)appendArguementToHalfUrl:(NSString *)url WithKey:(NSString *)key andValue:(NSString *)value;
+
+-(NSString *)appendSignCheckToUrl:(NSString *)url;
 
 @end

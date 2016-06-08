@@ -60,9 +60,6 @@ static NSString *_vkInstanceMethodURL = @"instanceMethodURL";
 
 
 
-
-
-
 @implementation NSString (VKURLString)
 
 #pragma mark MD5
@@ -87,6 +84,15 @@ static NSString *_vkInstanceMethodURL = @"instanceMethodURL";
 - (BOOL)containsString:(NSString *)string {
     return [self containsString:string options:0];
 }
+
+//-(NSString *)lastCharector
+//{
+//    if (self.length < 1) {
+//        return nil;
+//    }
+//    NSString * charstr = [self substringFromIndex:self.length-1];
+//    return charstr;
+//}
 
 - (NSString *)urldecode {
     return [self stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -172,10 +178,26 @@ static NSString *_vkInstanceMethodURL = @"instanceMethodURL";
 
 @interface VKURLParser ()
 
-
+@property (nonatomic,strong) NSMutableDictionary *shortNameDic;
 @end
 
 @implementation VKURLParser
+
+-(instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.shortNameDic = [[NSMutableDictionary alloc]init];
+    }
+    return self;
+}
+
+-(void)mapKeyword:(NSString *)key toActionName:(NSString *)action
+{
+    if (key.length > 0 && action.length > 0) {
+        [self.shortNameDic setObject:action forKey:key];
+    }
+}
 
 
 -(BOOL)parseURL:(NSURL *)url toAction:(NSString *__autoreleasing*)action toParamDic:(NSDictionary *__autoreleasing*)params;
@@ -192,6 +214,12 @@ static NSString *_vkInstanceMethodURL = @"instanceMethodURL";
     NSString *relp = url.relativePath;
     NSArray *pathcomponent = [relp componentsSeparatedByString:@"/"];
     NSString *actionName = pathcomponent.lastObject;
+    NSString *origActionName = nil;
+    if ([self.shortNameDic objectForKey:actionName]) {
+        origActionName = actionName;
+        actionName = self.shortNameDic[actionName];
+    }
+    
     NSString *actionNamePlus = [actionName stringByAppendingString:@":"];
     
     
@@ -214,12 +242,21 @@ static NSString *_vkInstanceMethodURL = @"instanceMethodURL";
     
     
     if (self.signSalt && self.signSalt.length > 0) {
-        NSMutableString *checkContent = [[NSMutableString alloc]initWithString:actionName];
+        NSMutableString *checkContent;
+        if (origActionName.length > 0) {
+            checkContent = [[NSMutableString alloc]initWithString:origActionName];
+        }else{
+            checkContent = [[NSMutableString alloc]initWithString:actionName];
+        }
+        
+        
         [checkContent appendString:@"_"];
         NSString *md5Sign;
         for (NSString *key in paramInfo.allKeys) {
             if (![key containsString:@"sign"]) {
                 [checkContent appendString:key];
+                [checkContent appendString:@"_"];
+                [checkContent appendString:paramInfo[key]];
                 [checkContent appendString:@"_"];
             }else{
                 md5Sign = paramInfo[key];
@@ -240,26 +277,98 @@ static NSString *_vkInstanceMethodURL = @"instanceMethodURL";
     }
 }
 
-+(void)parseURL:(NSURL *)url
+
+
+
+
+-(NSString *)creatNewNativeBaseUrl
 {
-    NSURL * urla = [NSURL URLWithString:@"http://localhost:8081/aaaa/index.ios.bundle?platform=ios&dev=true"];
+    NSMutableString * urlstring = [NSMutableString stringWithString:self.scheme];
+    [urlstring appendString:@"://"];
+    [urlstring appendString:self.host];
+    [urlstring appendString:@"/"];
+    NSString * result = [NSString stringWithString:urlstring];
+    return result;
+}
+
+-(NSString *)appendAction:(NSString *)action ToBaseUrl:(NSString *)url
+{
+    NSMutableString * urlstring = [NSMutableString stringWithString:url];
+    [urlstring appendString:action];
+    NSString * result = [NSString stringWithString:urlstring];
+    return result;
+}
+
+
+-(NSString *)appendArguementToHalfUrl:(NSString *)url WithKey:(NSString *)key andValue:(NSString *)value
+{
+    value = [value urlencode];
     
-    NSString * schema = urla.scheme;
-    NSString * name = urla.host;
-    NSString *path = urla.path;
-    NSString *fra = urla.fragment;
-    NSString *qurry = urla.query;
-    NSString *rpath = urla.relativePath;
-    
-    NSURLComponents *urlComponents = [NSURLComponents componentsWithURL:urla resolvingAgainstBaseURL:NO];
-    NSArray *queryItemsArray = [urlComponents queryItems];
-    NSMutableDictionary *queryItems = [NSMutableDictionary dictionary];
-    for (NSURLQueryItem *item in queryItemsArray) {
-        [queryItems setObject:item.value forKey:item.name];
-        
+    NSMutableString * urlstring = [NSMutableString stringWithString:url];
+    if (![url containsString:@"?"]) {
+        [urlstring appendString:@"?"];
+    }else{
+        [urlstring appendString:@"&"];
     }
     
-    return;
+    [urlstring appendString:key];
+    
+    [urlstring appendString:@"="];
+    
+    [urlstring appendString:value];
+    
+    NSString * result = [NSString stringWithString:urlstring];
+    return result;
+}
+
+
+-(NSString *)appendSignCheckToUrl:(NSString *)urlstr
+{
+    NSMutableString * urlstring = [NSMutableString stringWithString:urlstr];
+    
+    NSURL * url = [NSURL URLWithString:urlstr];
+    NSString *relp = url.relativePath;
+    NSArray *pathcomponent = [relp componentsSeparatedByString:@"/"];
+    NSString *actionName = pathcomponent.lastObject;
+    
+    NSDictionary *paramInfo = [url params];
+    
+    if (self.signSalt.length > 0) {
+        
+        NSMutableString *checkContent = [[NSMutableString alloc]initWithString:actionName];
+        [checkContent appendString:@"_"];
+        NSString *md5Sign;
+        for (NSString *key in paramInfo.allKeys) {
+            if (![key containsString:@"sign"]) {
+                [checkContent appendString:key];
+                [checkContent appendString:@"_"];
+                [checkContent appendString:paramInfo[key]];
+                [checkContent appendString:@"_"];
+            }else{
+                md5Sign = paramInfo[key];
+            }
+        }
+        NSString *content = [NSString stringWithString:checkContent];
+        NSString *contentMd5 = [content vkMD5HexDigest];
+        
+        if (![urlstring containsString:@"?"]) {
+            [urlstring appendString:@"?"];
+        }else{
+            [urlstring appendString:@"&"];
+        }
+        
+        [urlstring appendString:@"sign"];
+        
+        [urlstring appendString:@"="];
+        
+        [urlstring appendString:contentMd5];
+
+        NSString * result = [NSString stringWithString:urlstring];
+        return result;
+    }else
+    {
+        return urlstr;
+    }
 }
 
 @end
