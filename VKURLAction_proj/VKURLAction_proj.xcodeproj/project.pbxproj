@@ -45,8 +45,8 @@
 		6C0984D51D081CC300EADE2D /* VKURLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKURLParser.m; sourceTree = "<group>"; };
 		6C0984DD1D081E4900EADE2D /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		6C0984DE1D081E4900EADE2D /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
-		6C0984E31D0822DA00EADE2D /* VKMediatorAction+webVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VKMediatorAction+webVC.h"; sourceTree = "<group>"; };
-		6C0984E41D0822DA00EADE2D /* VKMediatorAction+webVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "VKMediatorAction+webVC.m"; sourceTree = "<group>"; };
+		6C0984E31D0822DA00EADE2D /* VKMediatorAction+webVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "VKMediatorAction+webVC.h"; path = "VKURLAction_proj/VKMediatorAction+webVC.h"; sourceTree = SOURCE_ROOT; };
+		6C0984E41D0822DA00EADE2D /* VKMediatorAction+webVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "VKMediatorAction+webVC.m"; path = "VKURLAction_proj/VKMediatorAction+webVC.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +86,6 @@
 				6C0984B71D081CB400EADE2D /* ViewController.m */,
 				6C0984DD1D081E4900EADE2D /* WebViewController.h */,
 				6C0984DE1D081E4900EADE2D /* WebViewController.m */,
-				6C0984E31D0822DA00EADE2D /* VKMediatorAction+webVC.h */,
-				6C0984E41D0822DA00EADE2D /* VKMediatorAction+webVC.m */,
 				6C0984B91D081CB400EADE2D /* Main.storyboard */,
 				6C0984BC1D081CB400EADE2D /* Assets.xcassets */,
 				6C0984BE1D081CB400EADE2D /* LaunchScreen.storyboard */,
@@ -112,6 +110,8 @@
 				6C0984C91D081CC300EADE2D /* UINavigationController+VKURLAction.m */,
 				6C0984CE1D081CC300EADE2D /* VKMediatorAction.h */,
 				6C0984CF1D081CC300EADE2D /* VKMediatorAction.m */,
+				6C0984E31D0822DA00EADE2D /* VKMediatorAction+webVC.h */,
+				6C0984E41D0822DA00EADE2D /* VKMediatorAction+webVC.m */,
 				6C0984D01D081CC300EADE2D /* VKMsgSend.h */,
 				6C0984D11D081CC300EADE2D /* VKMsgSend.m */,
 				6C0984D21D081CC300EADE2D /* VKURLAction.h */,
@@ -351,6 +351,7 @@
 				6C0984C61D081CB400EADE2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
