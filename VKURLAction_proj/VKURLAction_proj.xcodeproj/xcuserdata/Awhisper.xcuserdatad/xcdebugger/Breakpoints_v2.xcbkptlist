@@ -36,11 +36,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VKURLAction_proj/VKMediatorAction+webVC.m"
-            timestampString = "487073172.701285"
+            timestampString = "487574534.021236"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
             landmarkName = "-doAlertWebViewControllerWith:withMainUrl:"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,22 +58,6 @@
             startingLineNumber = "49"
             endingLineNumber = "49"
             landmarkName = "-doAlertAction"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VKURLAction_proj/VKMediatorAction+webVC.m"
-            timestampString = "487073284.654908"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "-getWebViewControllerWithTitle:withMainUrl:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -128,7 +112,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VKURLAction_proj/ViewController.m"
@@ -138,6 +122,22 @@
             startingLineNumber = "39"
             endingLineNumber = "39"
             landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VKURLAction_proj/VKMediatorAction+webVC.m"
+            timestampString = "487574558.235537"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "-getWebViewControllerWithTitle:withMainUrl:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

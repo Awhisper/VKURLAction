@@ -12,8 +12,9 @@
 
 -(void)doAlertWebViewControllerWith:(NSString *)title withMainUrl:(NSString *)url
 {
-    Class cls = NSClassFromString(@"WebViewController");
-    id vc = [[cls alloc]VKCallSelectorName:@"initWithTitle:url:" error:nil,title,url];
+//    Class cls = NSClassFromString(@"WebViewController");
+//    id vc = [[cls alloc]VKCallSelectorName:@"initWithTitle:url:" error:nil,title,url];
+    id vc = [@"WebViewController" VKCallClassAllocInitSelectorName:@"initWithTitle:url:" error:nil,title,url];
     [vc VKCallSelectorName:@"doAlertAction" error:nil];
 }
 
@@ -26,8 +27,10 @@
 
 -(id)getWebViewControllerWithTitle:(NSString *)title withMainUrl:(NSString *)url
 {
-    Class cls = NSClassFromString(@"WebViewController");
-    id vc = [[cls alloc]VKCallSelectorName:@"initWithTitle:url:" error:nil,title,url];
+//    Class cls = NSClassFromString(@"WebViewController");
+//    id vc = [[cls alloc]VKCallSelectorName:@"initWithTitle:url:" error:nil,title,url];
+    
+    id vc = [@"WebViewController" VKCallClassAllocInitSelectorName:@"initWithTitle:url:" error:nil,title,url];
     return vc;
 }
 
