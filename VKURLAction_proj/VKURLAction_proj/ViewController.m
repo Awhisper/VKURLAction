@@ -24,7 +24,7 @@
     [super viewDidLoad];
     
     [VKURLAction setupScheme:@"demo" andHost:@"nativeOpenUrl"];
-//    [VKURLAction enableSignCheck:@"salt"];
+    [VKURLAction enableSignCheck:@"salt"];
     [VKURLAction mapKeyword:@"alert" toActionName:@"doAlertWebViewControllerWithURLParams"];
     [VKURLAction mapKeyword:@"openWeb" toActionName:@"getWebViewControllerWithURLParams"];
     

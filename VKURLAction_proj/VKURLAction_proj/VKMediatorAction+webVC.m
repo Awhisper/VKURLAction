@@ -29,7 +29,6 @@
 {
 //    Class cls = NSClassFromString(@"WebViewController");
 //    id vc = [[cls alloc]VKCallSelectorName:@"initWithTitle:url:" error:nil,title,url];
-    
     id vc = [@"WebViewController" VKCallClassAllocInitSelectorName:@"initWithTitle:url:" error:nil,title,url];
     return vc;
 }

@@ -262,6 +262,7 @@ static NSString *_vkInstanceMethodURL = @"instanceMethodURL";
                 md5Sign = paramInfo[key];
             }
         }
+        [checkContent appendString:self.signSalt];
         NSString *content = [NSString stringWithString:checkContent];
         NSString *contentMd5 = [content vkMD5HexDigest];
         if ([contentMd5 isEqualToString:md5Sign]) {
@@ -348,6 +349,7 @@ static NSString *_vkInstanceMethodURL = @"instanceMethodURL";
                 md5Sign = paramInfo[key];
             }
         }
+        [checkContent appendString:self.signSalt];
         NSString *content = [NSString stringWithString:checkContent];
         NSString *contentMd5 = [content vkMD5HexDigest];
         
