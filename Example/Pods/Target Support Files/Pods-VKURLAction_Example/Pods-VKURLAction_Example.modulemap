@@ -1,6 +1,0 @@
-framework module Pods_VKURLAction_Example {
-  umbrella header "Pods-VKURLAction_Example-umbrella.h"
-
-  export *
-  module * { export * }
-}
