@@ -67,7 +67,7 @@ static NSString *_vkInstanceMethodURL = @"instanceMethodURL";
 {
     const char *original_str = [self UTF8String];
     unsigned char result[CC_MD5_DIGEST_LENGTH];
-    CC_MD5(original_str, strlen(original_str),result);
+    CC_MD5(original_str, (CC_LONG)strlen(original_str),result);
     NSMutableString *hash = [NSMutableString string];
     for (int i = 0; i < 16 ; i ++ ) {
         [hash appendFormat:@"%02x", result[i]];
@@ -104,7 +104,7 @@ static NSString *_vkInstanceMethodURL = @"instanceMethodURL";
     const char *c;
     c = [encUrl UTF8String];
     NSString *ret = @"";
-    for(int i = 0; i < len; i++) {
+    for(NSUInteger i = 0; i < len; i++) {
         switch (*c) {
             case '~':
                 ret = [ret stringByAppendingString:@"%7E"];
