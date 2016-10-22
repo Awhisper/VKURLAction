@@ -1,0 +1,6 @@
+framework module VKURLAction {
+  umbrella header "VKURLAction-umbrella.h"
+
+  export *
+  module * { export * }
+}
