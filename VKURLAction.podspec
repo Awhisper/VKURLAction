@@ -24,7 +24,7 @@ The actual author of this pod will have to fill this in to include a detailed de
   s.homepage         = 'https://github.com/Awhisper/VKURLAction'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Awhisper' => '65301524@qq.com' }
-  s.source           = { :git => 'https://github.com/Awhisper/VKURLAction.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/Awhisper/VKURLAction.git', :tag => "0.0.1" }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
