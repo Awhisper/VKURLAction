@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:VKURLAction_proj.xcodeproj">
+      location = "self:VKURLAction.xcodeproj">
    </FileRef>
 </Workspace>

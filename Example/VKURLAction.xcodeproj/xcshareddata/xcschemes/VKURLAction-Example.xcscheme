@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6C0984AC1D081CB400EADE2D"
-               BuildableName = "VKURLAction_proj.app"
-               BlueprintName = "VKURLAction_proj"
-               ReferencedContainer = "container:VKURLAction_proj.xcodeproj">
+               BlueprintIdentifier = "6003F589195388D20070C39A"
+               BuildableName = "VKURLAction_Example.app"
+               BlueprintName = "VKURLAction_Example"
+               ReferencedContainer = "container:VKURLAction.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,14 +28,24 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6003F5AD195388D20070C39A"
+               BuildableName = "VKURLAction_Tests.xctest"
+               BlueprintName = "VKURLAction_Tests"
+               ReferencedContainer = "container:VKURLAction.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6C0984AC1D081CB400EADE2D"
-            BuildableName = "VKURLAction_proj.app"
-            BlueprintName = "VKURLAction_proj"
-            ReferencedContainer = "container:VKURLAction_proj.xcodeproj">
+            BlueprintIdentifier = "6003F589195388D20070C39A"
+            BuildableName = "VKURLAction_Example.app"
+            BlueprintName = "VKURLAction_Example"
+            ReferencedContainer = "container:VKURLAction.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +65,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6C0984AC1D081CB400EADE2D"
-            BuildableName = "VKURLAction_proj.app"
-            BlueprintName = "VKURLAction_proj"
-            ReferencedContainer = "container:VKURLAction_proj.xcodeproj">
+            BlueprintIdentifier = "6003F589195388D20070C39A"
+            BuildableName = "VKURLAction_Example.app"
+            BlueprintName = "VKURLAction_Example"
+            ReferencedContainer = "container:VKURLAction.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +84,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6C0984AC1D081CB400EADE2D"
-            BuildableName = "VKURLAction_proj.app"
-            BlueprintName = "VKURLAction_proj"
-            ReferencedContainer = "container:VKURLAction_proj.xcodeproj">
+            BlueprintIdentifier = "6003F589195388D20070C39A"
+            BuildableName = "VKURLAction_Example.app"
+            BlueprintName = "VKURLAction_Example"
+            ReferencedContainer = "container:VKURLAction.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

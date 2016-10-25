@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'VKURLAction_Example' do
+  pod 'VKURLAction', :path => '../'
+
+  target 'VKURLAction_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
