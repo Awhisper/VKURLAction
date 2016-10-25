@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'VKURLAction'
-  s.version          = '1.0.0'
-  s.summary          = 'The actual author of this pod will have to fill this in'
+  s.version          = '0.0.1'
+  s.summary          = 'a kind of urlrouter  based on target-selector'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,14 +17,12 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = <<-DESC
-The actual author of this pod will have to fill this in to include a detailed description of this pod.
-                       DESC
+  s.description      = 'a kind of urlrouter  based on target-selector'
 
   s.homepage         = 'https://github.com/Awhisper/VKURLAction'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Awhisper' => '65301524@qq.com' }
-  s.source           = { :git => 'https://github.com/Awhisper/VKURLAction.git', :tag => "0.0.1" }
+  s.source           = { :git => 'https://github.com/Awhisper/VKURLAction.git', :tag => '0.0.1' }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
