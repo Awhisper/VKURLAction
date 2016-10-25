@@ -119,3 +119,14 @@ NSString * url =@"demo://nativeOpenUrl/openWeb?title=webView&url=http%3A%2F%2Faw
 __URLParser__
 
 整个VKURLAction都是依托在URLParser这个模块之上，他可以进行解析url，识别出url种的scheme，host，识别出url种的path，识别出url种的每一个参数，拼接成字典，校验签名的可靠性，具体代码见源码吧这块不是很复杂
+
+__Cocoapods支持__
+
+尝试了一把发布到cocoapods上
+因此可以使用pod导入
+```
+target 'VKURLActionDemo' do
+  pod 'VKURLAction'
+
+end
+```
