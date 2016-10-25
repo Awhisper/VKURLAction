@@ -1,0 +1,6 @@
+use_frameworks!
+
+target 'VKURLActionDemo' do
+  pod 'VKURLAction', :path => '../'
+
+end
