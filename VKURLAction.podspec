@@ -29,6 +29,6 @@ The actual author of this pod will have to fill this in to include a detailed de
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'VKURLAction/Classes/**/*'
+  s.source_files = 'VKURLAction/**/*'
 
 end
